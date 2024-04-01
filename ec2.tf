@@ -32,8 +32,8 @@ resource "aws_security_group" "ec2_security_group" {
 
 # Public EC2 Instance
 resource "aws_instance" "public_instance" {
-  ami           = "ami-0d74f1e79c38f2933" # Replace with your AMI ID
-  instance_type = "t3.micro"
+  ami           = "ami-007020fd9c84e18c7" # Replace with your AMI ID
+  instance_type = "t2.micro"
   subnet_id     = aws_subnet.public_subnet.id
   key_name      = aws_key_pair.example_keypair.key_name  # Corrected reference
   security_groups = [aws_security_group.ec2_security_group.id]
@@ -53,8 +53,8 @@ resource "aws_instance" "public_instance" {
 
 # Private EC2 Instance
 resource "aws_instance" "private_instance" {
-  ami             = "ami-0d74f1e79c38f2933" # Replace with your AMI ID
-  instance_type   = "t3.micro"
+  ami             = "ami-007020fd9c84e18c7" # Replace with your AMI ID
+  instance_type   = "t2.micro"
   subnet_id       = aws_subnet.private_subnet.id
   key_name        = aws_key_pair.example_keypair.key_name  # Corrected reference
   security_groups = [aws_security_group.ec2_security_group.id]
